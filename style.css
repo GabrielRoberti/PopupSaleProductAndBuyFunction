@@ -1,10 +1,11 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: rgb(255, 225, 238);
 }
+
 
 .cart-container {
     position: fixed;
@@ -49,7 +50,7 @@ body {
     right: 20px;
     width: 250px;
     padding: 15px;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     z-index: 1000;
@@ -67,16 +68,19 @@ body {
     color: #555;
 }
 
-.sticky-popup #addToCartBtn {
-    margin-top: 10px;
-    padding: 10px;
-    width: 100%;
-    background-color: #007bff;
-    color: white;
+#addToCartBtn {
+    display: block;
+    margin: 15px auto 0;
+    width: 200px;
+
     border: none;
     border-radius: 4px;
+
+    background-color: #007bff;
+    color: white;
     cursor: pointer;
     font-size: 14px;
+
     transition: transform 0.3s ease;
 }
 
@@ -84,8 +88,9 @@ body {
     transform: scale(1.08);
 }
 
-button:hover {
-    transform: scale(1.02); 
+#addToCartBtn:hover {
+    transform: scale(1.02);
+    background-color: #0054ae;
 }
 
 .product-image {
@@ -152,14 +157,6 @@ button:hover {
     padding: 10px;
 }
 
-.sticky-popup h3 {
-    font-size: 16px;
-}
-
-.sticky-popup p {
-    font-size: 12px;
-}
-
 .sticky-popup #addToCartBtn {
     padding: 8px;
     font-size: 12px;
@@ -167,4 +164,182 @@ button:hover {
 
 .carousel {
     max-width: 220px;
+}
+
+.quantityItem{
+    display: inline-block;
+    text-align: center;
+
+    width: 20px;
+}
+
+.quantityItemBtn{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #00449c;
+}
+
+.mockContent{
+    height: 1000px;
+}
+
+.product-tag {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    background-color: #006eff;
+    color: #fff;
+    padding: 4px 10px;
+}
+
+.productName{
+    font-size: 18px;
+    font-weight: 700;   
+}
+
+s{
+    opacity: 0.5;
+}
+
+.productHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+}
+
+.productNameWrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.product-tag{
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.productPrice{
+    font-size: 16px;
+    font-weight: 600;
+    color: #00449c;
+}
+
+.productDetails{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 0 25px;
+    margin: 20px 0 15px;
+}
+
+.productQuantityWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px 10px;
+}
+
+
+/* MODAL CART SHOP*/
+
+.modal {
+    display: none;
+
+    position: fixed;
+    z-index: 5000;
+    top: 80px;
+    right: 20px;
+    height: 120px;
+    width: 300px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    
+}
+
+.modal-content{
+    display: none;
+}
+
+.cartNameModal{
+    position: absolute;
+    top: 12px;
+    left: 13px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.cartShoesImg{
+    width: 75px;
+    height: auto;
+    position: absolute;
+    top: 40px;
+    left: 13px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+.productNameModal{
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.productQuantityModal{
+    position: absolute;
+    top: 72px;
+    left: 100px;
+    font-size: 11px;
+    color: #555;   
+}
+
+.productValueModal{
+    position: absolute;
+    top: 72px;
+    left: 150px;
+    font-size: 11px;
+    color: #555; 
+}
+
+.productColorModal{
+    position: absolute;
+    top: 72px;
+    left: 175px;
+    font-size: 11px;
+    color: #555; 
+}
+
+.trashModal{
+    position: absolute;
+    top: 56px;
+    right: 20px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+.fa-trash-alt {
+    font-size: 16px;
+    cursor: pointer;
+    color: red;
+}
+
+#noProductShop{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
 }
