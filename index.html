@@ -5,42 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VANS SH-8 HI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<link rel="stylesheet" href="./style.css">
-
 <body>
-    <!-- Cart Icon with Quantity -->
+    <!-- Botão do Carrinho -->
+    <div class="bellIcon">
+        <span class="fas fa-bell"></span>
+    </div>
+
     <div class="cart-container" id="cartBtn">
-        <div class="cart-icon">
-            🛒
+        <div class="fas fa-shopping-cart">
             <span class="cart-count" id="cartCount">0</span>
         </div>
     </div>
 
-    <div class="mockContent"></div>    
+    <!-- Conteúdo Mock -->
+    <div class="mockContent"></div>
 
+    <!-- Popup de Produto Fixo -->
     <div class="sticky-popup" id="stickyPopup">
-    
         <div class="productHeader">
-            <div class="productNameWrapper">
+            <div class="productNameWrapper">      
+                <button class="close-modal">&times;</button>
                 <span class="productName">Vans SH-8 Hi</span>
-                <span class="productPrice">$99.95 <s>$129.95</s> </span>
+                <span class="productPrice">$99.95 <s>$129.95</s></span>
             </div>
             <div class="product-tag">Sale</div>
         </div>
 
+        <!-- Carrossel de Imagens -->
         <div class="carousel">
             <div class="carousel-images">
-                <img src="./Imagem/Shoes1.webp" alt="Imagem 1" class="carousel-image">
-                <img src="./Imagem/Shoes2.webp" alt="Imagem 2" class="carousel-image">
-                <img src="./Imagem/Shoes3.webp" alt="Imagem 3" class="carousel-image">
+                <img src="Imagem/Shoes1.webp" alt="Imagem 1" class="carousel-image">
+                <img src="Imagem/Shoes2.webp" alt="Imagem 2" class="carousel-image">
+                <img src="Imagem/Shoes3.webp" alt="Imagem 3" class="carousel-image">
             </div>
-
             <div class="carousel-controls" id="carouselControls"></div>
         </div>
-        
+
         <div class="productDetails">
             <span id="productSize">Size: M</span>
             <span id="productColor">Color: Black</span>
@@ -48,44 +50,30 @@
 
         <div class="productQuantityWrapper">
             <span>Quantity:</span>
-
-            <button type="button" class="quantityItemBtn">
-                <span id="btnMinus">−</span>
-            </button>
-    
-             <span class="quantityItem">1</span>
-    
-            <button type="button" class="quantityItemBtn">        
-                <span id="btnPlus">+</span>
-            </button>
+            <button type="button" class="quantityItemBtn" id="btnMinus">−</button>
+            <span class="quantityItem">1</span>
+            <button type="button" class="quantityItemBtn" id="btnPlus">+</button>
         </div>
-
 
         <button id="addToCartBtn">Add to Cart</button>
     </div>
 
+    <!-- Modal de Carrinho -->
     <div class="modal" id="modal">
         <div class="modal-content">
             <span class="cartNameModal">Cart</span>
-
-            <img class="cartShoesImg" src="./Imagem/Shoes1.webp">
-
+            <img class="cartShoesImg" src="Imagem/Shoes1.webp">
             <span class="productNameModal">Vans SH-8 Hi</span>
-
             <span class="productQuantityModal">Quantity:</span>
             <span class="productValueModal" id="productValueModal">1</span>
-
             <span class="productColorModal">Color: Black</span>
-            
             <div class="trashModal">
-                <span class="fa fa-trash-alt"></span>
+                <span class="fa fa-trash-alt" id="trashModal"></span>
             </div>
         </div>
         <div id="noProductShop">No product yet</div>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
-
-<script src="script.js"></script>
-

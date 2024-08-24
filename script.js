@@ -1,58 +1,59 @@
-
 let cartCount = 0;
-let addBtn = 0;
 
-    document.getElementById('addToCartBtn').addEventListener('click', function() {
-        var quantitySpan = document.querySelector('.quantityItem');
-        var quantityValue = quantitySpan.textContent;
-        var modalContent = document.querySelector('.modal-content');
-        var noProductShop = document.getElementById('noProductShop');
-
-        if(quantityValue > 0){
-            cartCount += parseInt(quantityValue);
-            document.getElementById('productValueModal').textContent = cartCount;
-            document.getElementById('cartCount').textContent = cartCount;   
-            modalContent.style.display = 'block';
-            noProductShop.style.display = 'none';
-            
-        }else{
-            alert('Please select quantity');
-        }
-        
-    });
-
-    document.getElementById('btnMinus').addEventListener('click', function() {
-        
-        var quantitySpan = document.querySelector('.quantityItem');
-        var quantityValue = quantitySpan.textContent;
-        
-        if(quantityValue > 1){
-            quantityValue--;
-            quantitySpan.textContent = quantityValue;
-        }
-    });
-
-    document.getElementById('btnPlus').addEventListener('click', function() {
-      
-        var quantitySpan = document.querySelector('.quantityItem');
-        var quantityValue = quantitySpan.textContent;
-        
-        quantityValue++;
-        quantitySpan.textContent = quantityValue;
-      
-    });
-
+document.addEventListener('DOMContentLoaded', function() {
+    const cartBtn = document.getElementById('cartBtn');
+    const modal = document.getElementById('modal');
+    const modalContent = document.querySelector('.modal-content');
+    const trashModal = document.getElementById('trashModal');
+    const productValueModal = document.getElementById('productValueModal');
+    const cartCountElem = document.getElementById('cartCount');
+    const noProductShop = document.getElementById('noProductShop');
+    const closeModalBtn = document.querySelector('.close-modal');
+    const stickyPopup = document.getElementById('stickyPopup');
+    const bellIcon = document.querySelector('.bellIcon');
+    const quantitySpan = document.querySelector('.quantityItem');
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const btnMinus = document.getElementById('btnMinus');
+    const btnPlus = document.getElementById('btnPlus');
     const carouselImages = document.querySelector('.carousel-images');
     const carouselControls = document.getElementById('carouselControls');
     const images = document.querySelectorAll('.carousel-image');
 
+    // Add to Cart button click handler
+    addToCartBtn.addEventListener('click', function() {
+        const quantityValue = parseInt(quantitySpan.textContent);
+
+        if (quantityValue > 0) {
+            cartCount += quantityValue;
+            document.getElementById('productValueModal').textContent = cartCount;
+            cartCountElem.textContent = cartCount;
+            modalContent.style.display = 'block';
+            noProductShop.style.display = 'none';
+        } else {
+            alert('Please select quantity');
+        }
+    });
+
+    // Minus button click handler
+    btnMinus.addEventListener('click', function() {
+        let quantityValue = parseInt(quantitySpan.textContent);
+        if (quantityValue > 1) {
+            quantitySpan.textContent = quantityValue - 1;
+        }
+    });
+
+    // Plus button click handler
+    btnPlus.addEventListener('click', function() {
+        let quantityValue = parseInt(quantitySpan.textContent);
+        quantitySpan.textContent = quantityValue + 1;
+    });
+
+    // Carousel setup
     let currentIndex = 0;
 
     images.forEach((image, index) => {
-
         const btnEl = document.createElement('button');
         btnEl.classList.add('carousel-btn');
-
         if (index === currentIndex) {
             btnEl.classList.add('active');
         }
@@ -67,27 +68,52 @@ let addBtn = 0;
 
     function updateCarousel() {
         const offset = -currentIndex * 100;
-
         carouselImages.style.transform = `translateX(${offset}%)`;
-        
+
         document.querySelectorAll('.carousel-btn').forEach((btnEl, index) => {
             btnEl.classList.toggle('active', index === currentIndex);
         });
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const cartBtn = document.getElementById('cartBtn');
-        const modal = document.getElementById('modal');
-    
-        cartBtn.addEventListener('click', function () {
-            modal.style.display = 'block';
-        });
-    
-        window.addEventListener('click', function (event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
+    // Cart button with ternary operator to show/hide modal
+    cartBtn.addEventListener('click', function() {
+        modal.style.display = (modal.style.display === 'block') ? 'none' : 'block';
     });
 
-    
+    // Trash button click
+    trashModal.addEventListener('click', function() {
+        let currentQuantity = parseInt(productValueModal.textContent);
+
+        if (currentQuantity > 0) {
+            currentQuantity--;
+            cartCount--;
+
+            productValueModal.textContent = currentQuantity;
+            cartCountElem.textContent = cartCount;
+
+            if (currentQuantity === 0) {
+                noProductShop.style.display = 'block';
+                modalContent.style.display = 'none';
+            }
+        }
+    });
+
+    // Close modal when clicking in the modal content
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Close sticky popup and show bell icon
+    closeModalBtn.addEventListener('click', function() {
+        stickyPopup.style.display = 'none';
+        bellIcon.style.display = 'flex';
+    });
+
+    // Open sticky popup and hide bell icon
+    bellIcon.addEventListener('click', function() {
+        stickyPopup.style.display = 'block';
+        bellIcon.style.display = 'none';
+    });
+});
