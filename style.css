@@ -67,7 +67,7 @@ body {
     color: #555;
 }
 
-.sticky-popup button {
+.sticky-popup #addToCartBtn {
     margin-top: 10px;
     padding: 10px;
     width: 100%;
@@ -86,4 +86,85 @@ body {
 
 button:hover {
     transform: scale(1.02); 
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-image {
+    min-width: 90%;
+    margin-left: 18px;
+    border-radius: 4px;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+
+}
+
+.carousel-btn {
+    width: 10px;
+    height: 11px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-btn.active {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.cart-container {
+    width: 50px;
+    height: 50px;
+}
+
+.sticky-popup {
+    width: 220px;
+    padding: 10px;
+}
+
+.sticky-popup h3 {
+    font-size: 16px;
+}
+
+.sticky-popup p {
+    font-size: 12px;
+}
+
+.sticky-popup #addToCartBtn {
+    padding: 8px;
+    font-size: 12px;
+}
+
+.carousel {
+    max-width: 220px;
 }

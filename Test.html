@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<link rel="stylesheet" href="./script.js">
 <link rel="stylesheet" href="./style.css">
 
 <body>
@@ -22,6 +21,16 @@
     <!-- Product page content -->
     <div class="sticky-popup" id="stickyPopup">
         <h3 id="productName">Vans SH-8 Hi</h3>
+        <!-- Carrossel de Imagens -->
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="./Imagem/Shoes1.webp" alt="Imagem 1" class="carousel-image">
+                <img src="./Imagem/Shoes2.webp" alt="Imagem 2" class="carousel-image">
+                <img src="./Imagem/Shoes3.webp" alt="Imagem 3" class="carousel-image">
+            </div>
+
+            <div class="carousel-controls" id="carouselControls"></div>
+        </div>
         <p id="productPrice">Price: $99.95 <s>$129.95</s></p>
         <p id="productSize">Size: M</p>
         <p id="productColor">Color: Black</p>
@@ -29,7 +38,8 @@
         <button id="addToCartBtn">Add to Cart</button>
     </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
+
+<script src="script.js"></script>
 
