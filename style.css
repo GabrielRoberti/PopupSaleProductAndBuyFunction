@@ -411,6 +411,19 @@ s{
     color: red;
 }
 
+.clear-all-modal{
+    position: absolute;
+    top: 102px;
+    right: 12px;
+    font-size: 10px;
+    color: #444444;
+    cursor: pointer;
+}
+
+.clear-all-modal:hover {
+    color: red;
+}
+
 #noProductShop{
     position: absolute;
     top: 50%;

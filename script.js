@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('modal');
     const modalContent = document.querySelector('.modal-content');
     const trashModal = document.getElementById('trashModal');
+    const clearAll = document.getElementById('clearAllModal');
     const productValueModal = document.getElementById('productValueModal');
     const cartCountElem = document.getElementById('cartCount');
     const noProductShop = document.getElementById('noProductShop');
@@ -103,6 +104,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 modalContent.style.display = 'none';
             }
         }
+    });
+
+       // Trash button click
+    clearAll.addEventListener('click', function() {    
+            productValueModal.textContent = 0;
+            cartCountElem.textContent = 0;
+
+            noProductShop.style.display = 'block';
+            modalContent.style.display = 'none';
     });
 
     // Close sticky popup and show bell icon
