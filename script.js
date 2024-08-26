@@ -105,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-
     // Close sticky popup and show bell icon
     closeModalBtn.addEventListener('click', function() {
         stickyPopup.style.display = 'none';
