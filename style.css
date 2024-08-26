@@ -54,7 +54,7 @@ body {
 
 }
 
-.bellIcon {
+.bell-icon {
     position: fixed;
     top: 92%;
     right: 20px;
@@ -74,7 +74,7 @@ body {
 
 }
 
-.bellIcon:hover {
+.bell-icon:hover {
     transform: scale(1.08);
 }
 
@@ -144,15 +144,18 @@ body {
     font-size: 14px;
 
     transition: transform 0.3s ease;
-}
 
-.cart-container:hover {
-    transform: scale(1.08);
+    padding: 8px;
+    font-size: 12px;
 }
 
 #addToCartBtn:hover {
     transform: scale(1.02);
     background-color: #0054ae;
+}
+
+.cart-container:hover {
+    transform: scale(1.08);
 }
 
 .product-image {
@@ -219,23 +222,18 @@ body {
     padding: 10px;
 }
 
-.sticky-popup #addToCartBtn {
-    padding: 8px;
-    font-size: 12px;
-}
-
 .carousel {
     max-width: 220px;
 }
 
-.quantityItem{
+.quantity-item{
     display: inline-block;
     text-align: center;
 
     width: 20px;
 }
 
-.quantityItemBtn{
+.quantity-item-btn{
     background: none;
     border: none;
     cursor: pointer;
@@ -243,7 +241,7 @@ body {
     color: #00449c;
 }
 
-.mockContent{
+.mock-content{
     height: 1000px;
 }
 
@@ -257,16 +255,17 @@ body {
     padding: 4px 10px;
 }
 
-.productName{
+.product-name{
     font-size: 18px;
     font-weight: 700;   
 }
 
 s{
     opacity: 0.5;
+    font-size: 12px;
 }
 
-.productHeader{
+.product-header{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -274,7 +273,7 @@ s{
     padding: 12px 14px;
 }
 
-.productNameWrapper{
+.product-name-wrapper{
     display: flex;
     flex-direction: column;
 }
@@ -284,13 +283,13 @@ s{
     font-size: 12px;
 }
 
-.productPrice{
+.product-price{
     font-size: 16px;
     font-weight: 600;
     color: #00449c;
 }
 
-.productDetails{
+.product-details{
     display: flex;
     justify-content: space-between;
     font-size: 14px;
@@ -298,7 +297,7 @@ s{
     margin: 20px 0 15px;
 }
 
-.productQuantityWrapper{
+.product-quantity-wrapper{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -307,28 +306,41 @@ s{
 
 
 /* MODAL CART SHOP*/
-
 .modal {
     display: none;
 
     position: fixed;
     z-index: 5000;
-    top: 80px;
+    top: 16px;
     right: 20px;
     height: 120px;
     width: 300px;
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
     
+    animation: transition 0.3s ease;
+    transform: translateY(50%);
+}
+
+@keyframes transition {
+    0% {
+        transform: translateY(20%);
+        opacity: 0%;
+    }
+    40% {
+        opacity: 30%;
+    }
+    90% {
+        opacity: 90%;
+    }
 }
 
 .modal-content{
     display: none;
 }
 
-.cartNameModal{
+.cart-name-modal{
     position: absolute;
     top: 12px;
     left: 13px;
@@ -337,7 +349,7 @@ s{
     color: #333;
 }
 
-.cartShoesImg{
+.cart-shoes-img{
     width: 75px;
     height: auto;
     position: absolute;
@@ -348,7 +360,11 @@ s{
 
 }
 
-.productNameModal{
+.cart-shoes-img:hover{
+    transform: scale(1.02);
+}
+
+.product-name-modal{
     position: absolute;
     top: 50px;
     left: 100px;
@@ -357,7 +373,7 @@ s{
     color: #333;
 }
 
-.productQuantityModal{
+.product-quantity-modal{
     position: absolute;
     top: 72px;
     left: 100px;
@@ -365,7 +381,7 @@ s{
     color: #555;   
 }
 
-.productValueModal{
+.product-value-modal{
     position: absolute;
     top: 72px;
     left: 150px;
@@ -373,7 +389,7 @@ s{
     color: #555; 
 }
 
-.productColorModal{
+.product-color-modal{
     position: absolute;
     top: 72px;
     left: 175px;
@@ -381,7 +397,7 @@ s{
     color: #555; 
 }
 
-.trashModal{
+.trash-modal{
     position: absolute;
     top: 56px;
     right: 20px;
@@ -414,9 +430,24 @@ s{
     border: none;
     font-size: 20px;
     cursor: pointer;
-    color: #333;
+    color: #444444;
     font-weight: bold;
 }
 .close-modal:hover {
-    color: red;
+    color: black;
+}
+
+.close-modal-cart {
+    position: absolute;
+    top: 1px;
+    right: 2px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #444444;
+    font-weight: bold;
+}
+.close-modal-cart:hover {
+    color: black;
 }

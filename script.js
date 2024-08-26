@@ -2,6 +2,7 @@ let cartCount = 0;
 
 document.addEventListener('DOMContentLoaded', function() {
     const cartBtn = document.getElementById('cartBtn');
+    const closeModal = document.getElementById('closeModal-cart');
     const modal = document.getElementById('modal');
     const modalContent = document.querySelector('.modal-content');
     const trashModal = document.getElementById('trashModal');
@@ -10,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const noProductShop = document.getElementById('noProductShop');
     const closeModalBtn = document.querySelector('.close-modal');
     const stickyPopup = document.getElementById('stickyPopup');
-    const bellIcon = document.querySelector('.bellIcon');
-    const quantitySpan = document.querySelector('.quantityItem');
+    const bellIcon = document.querySelector('.bell-icon');
+    const quantitySpan = document.querySelector('.quantity-item');
     const addToCartBtn = document.getElementById('addToCartBtn');
     const btnMinus = document.getElementById('btnMinus');
     const btnPlus = document.getElementById('btnPlus');
@@ -80,6 +81,12 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = (modal.style.display === 'block') ? 'none' : 'block';
     });
 
+    // Cross button with ternary operator to show/hide modal
+    closeModal.addEventListener('click', function() {
+        modal.style.display = (modal.style.display === 'block') ? 'none' : 'block';
+    });
+
+    
     // Trash button click
     trashModal.addEventListener('click', function() {
         let currentQuantity = parseInt(productValueModal.textContent);
@@ -98,12 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Close modal when clicking in the modal content
-    window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
 
     // Close sticky popup and show bell icon
     closeModalBtn.addEventListener('click', function() {

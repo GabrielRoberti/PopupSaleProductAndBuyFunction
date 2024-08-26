@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- Botão do Carrinho -->
-    <div class="bellIcon">
+    <div class="bell-icon">
         <span class="fas fa-bell"></span>
     </div>
 
@@ -20,15 +20,15 @@
     </div>
 
     <!-- Conteúdo Mock -->
-    <div class="mockContent"></div>
+    <div class="mock-content"></div>
 
     <!-- Popup de Produto Fixo -->
     <div class="sticky-popup" id="stickyPopup">
-        <div class="productHeader">
-            <div class="productNameWrapper">      
+        <div class="product-header">
+            <div class="product-name-wrapper">      
                 <button class="close-modal">&times;</button>
-                <span class="productName">Vans SH-8 Hi</span>
-                <span class="productPrice">$99.95 <s>$129.95</s></span>
+                <span class="product-name">Vans SH-8 Hi</span>
+                <span class="product-price">$99.95 <s>$129.95</s></span>
             </div>
             <div class="product-tag">Sale</div>
         </div>
@@ -43,16 +43,16 @@
             <div class="carousel-controls" id="carouselControls"></div>
         </div>
 
-        <div class="productDetails">
+        <div class="product-details">
             <span id="productSize">Size: M</span>
             <span id="productColor">Color: Black</span>
         </div>
 
-        <div class="productQuantityWrapper">
+        <div class="product-quantity-wrapper">
             <span>Quantity:</span>
-            <button type="button" class="quantityItemBtn" id="btnMinus">−</button>
-            <span class="quantityItem">1</span>
-            <button type="button" class="quantityItemBtn" id="btnPlus">+</button>
+            <button type="button" class="quantity-item-btn" id="btnMinus">−</button>
+            <span class="quantity-item">1</span>
+            <button type="button" class="quantity-item-btn" id="btnPlus">+</button>
         </div>
 
         <button id="addToCartBtn">Add to Cart</button>
@@ -60,17 +60,24 @@
 
     <!-- Modal de Carrinho -->
     <div class="modal" id="modal">
+        <button id="closeModal-cart" class="close-modal-cart">&times;</button>
+
         <div class="modal-content">
-            <span class="cartNameModal">Cart</span>
-            <img class="cartShoesImg" src="Imagem/Shoes1.webp">
-            <span class="productNameModal">Vans SH-8 Hi</span>
-            <span class="productQuantityModal">Quantity:</span>
-            <span class="productValueModal" id="productValueModal">1</span>
-            <span class="productColorModal">Color: Black</span>
-            <div class="trashModal">
+            <span class="cart-name-modal">Cart</span>
+            <img class="cart-shoes-img" src="Imagem/Shoes1.webp">
+            
+            <div>
+                <span class="product-name-modal">Vans SH-8 Hi</span>
+                <span class="product-quantity-modal">Quantity:</span>
+                <span class="product-value-modal" id="productValueModal">1</span>
+                <span class="product-color-modal">Color: Black</span>
+            </div>
+            
+            <div class="trash-modal">
                 <span class="fa fa-trash-alt" id="trashModal"></span>
             </div>
         </div>
+
         <div id="noProductShop">No product yet</div>
     </div>
 
