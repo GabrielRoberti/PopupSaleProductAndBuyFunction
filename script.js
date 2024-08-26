@@ -110,7 +110,8 @@ document.addEventListener('DOMContentLoaded', function() {
     clearAll.addEventListener('click', function() {    
             productValueModal.textContent = 0;
             cartCountElem.textContent = 0;
-
+            cartCount = 0;
+            
             noProductShop.style.display = 'block';
             modalContent.style.display = 'none';
     });
